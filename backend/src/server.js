@@ -3,8 +3,10 @@ import workoutRoutes from "./routes/workouts.js";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 dotenv.config();
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 // export const PORT = 5000;
 
 app.use(express.json());
