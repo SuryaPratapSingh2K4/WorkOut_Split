@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Trash2Icon,PenSquareIcon } from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
+import { formatDate } from '../utils';
 
 function Card({ plan }) {
     const navigate = useNavigate();
@@ -27,6 +28,7 @@ function Card({ plan }) {
                 <h3>Reps of an exercise : <span>{plan.reps}</span></h3>
                 <h3>Load for an exercise : <span>{plan.load}</span></h3>
                 <div className="card-actions justify-between items-center mt-4">
+                    <span className='text-sm text-base-content/60'>{formatDate(new Date(plan.createdAt))}</span>
                     <div className="flex items-center gap-1">
                         <PenSquareIcon className="size-4" />
                         <button

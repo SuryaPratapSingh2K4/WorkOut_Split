@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 dotenv.config();
 import cors from 'cors';
+// import userRoutes from './routes/user.js'
+import userRoutes from './routes/user.js'
 
 const app = express();
 app.use(cors());
@@ -11,7 +13,9 @@ app.use(cors());
 
 app.use(express.json());
 
+
 app.use("/api/workouts", workoutRoutes);
+app.use("/api/users",userRoutes)
 
 // app.get('/',(req,res) => {
 //     res.json({message: "Welcome to the app"})
